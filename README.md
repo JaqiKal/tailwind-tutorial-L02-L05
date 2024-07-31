@@ -1,6 +1,82 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Lesson02 - Acme Rocket
 
-Welcome USER_NAME,
+## Set up dev environment
+
+### IDE structure
+```txt
+lesson01/
+│
+├── build/
+│ ├── css/
+│ │ └── style.css         # The compiled CSS file generated from Tailwind CSS and any custom styles.
+│ ├── img/
+│ │ └── n                 # Various images used in site.
+│ └── index.html          # The main HTML file that serves as the entry point for the website.
+├── src/
+│ └── input.css           # The source CSS file that includes Tailwind CSS directives and custom styles.
+├── .gitignore            # Specifies files and directories that should be ignored by Git.
+├── favicon.ico           # The icon displayed in the browser tab for the website.
+├── package-lock.json     # Automatically generated file that locks the versions of the dependencies used in the project.
+├── package.json          # Contains metadata about the project and lists dependencies and scripts used in the project.
+├── tailwind.config.js    # The configuration file for Tailwind CSS, used to customize the framework.
+└── README                # Documentation file providing an overview of the project and instructions for setup and usage.
+
+```
+
+### CI stuff
+
+- Using CI template and start of a simple HTTP server using Python's built-in module, instead of Live Server.
+
+  - `python3 -m http.server` => Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) …
+
+### Project set up
+
+In terminal run:
+- `node -v`  => check node version, in this case : v16.13.0 
+- `npx tailwindcss init`  => generates a tailwind.config.js file in the project's root directory. This file contains the default configuration for Tailwind CSS.
+  - ***npx:*** is a package runner tool that comes with Node.js. It allows you to execute binaries from npm packages without globally installing them.
+  - ***tailwindcss:*** This specifies the Tailwind CSS package.
+  - ***init:*** This is a command provided by the Tailwind CSS package to initialize a new configuration file.
+
+Project structure:
+- In `src dir`, create `input.css`
+  - Add following directives, see comments in file to learn what they do.
+  ```txt
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  ```
+- In `build dir`, create `index.html` with a boilerplate.
+- Add images to folder `build>img`
+- During development add the *favicon* in the root. If to deploy project then move it build dir.
+- In `tailwind.config.js` add path to where the html content is found.
+
+In Terminal:
+- `npm init -y` => Create a package.json file to initialize project metadata, manages dependencies, and automates scripts, streamlining the setup and maintenance of a Node.js project.
+
+In project structure:
+- To compile Tailwind CSS and continously watch for changes and update the 'style.css' file. In `package.json`add to scripts: `"tailwind": "npx tailwindcss -i ./src/input.css -o ./build/css/style.css --watch"`
+
+In Terminal:
+- `npm i -D prettier-plugin-tailwindcss` => Install a development dependency, this is then seen in the `package.json`file.
+  - Using prettier-plugin-tailwindcss ensures consistent and organized ordering of Tailwind CSS classes, improves readability by logically grouping related classes, and enhances development efficiency by automating class sorting, allowing you to focus on writing styles and functionality.
+
+In project structure:
+- new entry,`node_modules` =>  this directory is a key component of a Node.js project, storing all the dependencies needed for the project to run. It ensures that modules are isolated, version-controlled, and readily available for use in your application. Add it to `.gitignore`.
+- Add `"npx prettier --write **/*.html"` to script in `package.json`:  leverages Prettier, a code formatting tool, to format all (&only) HTML files in your project and this also auto formats and organizes the Tailwind classed into a recommended order.
+
+In Terminal:
+- `npm run tailwind` => This compiles the Tailwind CSS into a usable output file and watches for changes, streamlining the development workflow and ensuring that the styles are always up-to-date and correctly compiled.
+- The warnings will go away as soon as html is linked.
+
+In project structure:
+- The `css directory and style.css` is created in 'build'
+- In 'index.html' add link to css and change title. Also add some body classes.
+
+***
+
+![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+Welcome Jacqueline Kalmár,
 
 This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 

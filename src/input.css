@@ -1,0 +1,20 @@
+/*
+* These directives import different parts of Tailwind's CSS framework into the project.
+* Base styles: 
+* - Establish a consistent foundation across different browsers.
+* - Normalize styles and set up default font sizes, colors, and other global settings.
+* 
+* Component styles:
+* - Provide ready-to-use component styles that can be applied directly to HTML elements.
+* - Facilitate rapid development with pre-styled components, reducing the need for custom CSS.
+*
+* Utility clases:
+* - Offer a wide range of utility classes for fine-tuned control over your design.
+* - Enable a utility-first approach to styling, where you apply single-purpose classes directly to HTML elements.
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* If Tailwind isn't supporting a class then add a Custom CSS class */

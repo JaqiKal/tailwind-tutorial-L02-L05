@@ -1,0 +1,24 @@
+{
+  "name": "tailwind-tutorial-l02",
+  "version": "1.0.0",
+  "description": "Set up dev environment",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "tailwind": "npx tailwindcss -i ./src/input.css -o ./build/css/style.css --watch",
+    "prettier": "npx prettier --write **/*.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaqiKal/tailwind-tutorial-L02.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JaqiKal/tailwind-tutorial-L02/issues"
+  },
+  "homepage": "https://github.com/JaqiKal/tailwind-tutorial-L02#readme",
+  "devDependencies": {
+    "prettier-plugin-tailwindcss": "^0.6.5"
+  }
+}
