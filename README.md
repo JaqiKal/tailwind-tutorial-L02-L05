@@ -1,10 +1,26 @@
-# Lesson02 - Acme Rocket
+# Lesson02-05 | Acme Rocket
+
+## Table of Contents
+
+- [Set up dev environment](#set-up-dev-environment)
+  - [IDE structure](#ide-structure)
+  - [HTTP Server](#http-server)
+  - [Project set up](#project-set-up)
+- [Credentials](#credentials)
+  - [CI start template](#ci-start-template)
+    - [Gitpod Reminders](#gitpod-reminders)
+    - [Connecting your Mongo database](#connecting-your-mongo-database)
+    - [Release History](#release-history)
+    - [FAQ about the uptime script](#faq-about-the-uptime-script)
+
+lesson 0 is covered in a [separate repo](https://github.com/JaqiKal/tailwind-tutorial-L01).
 
 ## Set up dev environment
 
 ### IDE structure
+
 ```txt
-lesson01/
+tailwind-tutorial-l02-l05/
 │
 ├── build/
 │ ├── css/
@@ -20,25 +36,30 @@ lesson01/
 ├── package.json          # Contains metadata about the project and lists dependencies and scripts used in the project.
 ├── tailwind.config.js    # The configuration file for Tailwind CSS, used to customize the framework.
 └── README                # Documentation file providing an overview of the project and instructions for setup and usage.
-
 ```
 
-### CI stuff
+_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
+
+### HTTP server
 
 - Using CI template and start of a simple HTTP server using Python's built-in module, instead of Live Server.
 
   - `python3 -m http.server` => Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) …
 
+_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
+
 ### Project set up
 
 In terminal run:
-- `node -v`  => check node version, in this case : v16.13.0 
-- `npx tailwindcss init`  => generates a tailwind.config.js file in the project's root directory. This file contains the default configuration for Tailwind CSS.
-  - ***npx:*** is a package runner tool that comes with Node.js. It allows you to execute binaries from npm packages without globally installing them.
-  - ***tailwindcss:*** This specifies the Tailwind CSS package.
-  - ***init:*** This is a command provided by the Tailwind CSS package to initialize a new configuration file.
+
+- `node -v` => check node version, in this case : v16.13.0
+- `npx tailwindcss init` => generates a tailwind.config.js file in the project's root directory. This file contains the default configuration for Tailwind CSS.
+  - **_npx:_** is a package runner tool that comes with Node.js. It allows you to execute binaries from npm packages without globally installing them.
+  - **_tailwindcss:_** This specifies the Tailwind CSS package.
+  - **_init:_** This is a command provided by the Tailwind CSS package to initialize a new configuration file.
 
 Project structure:
+
 - In `src dir`, create `input.css`
   - Add following directives, see comments in file to learn what they do.
   ```txt
@@ -48,33 +69,69 @@ Project structure:
   ```
 - In `build dir`, create `index.html` with a boilerplate.
 - Add images to folder `build>img`
-- During development add the *favicon* in the root. If to deploy project then move it build dir.
+- During development add the _favicon_ in the root. If to deploy project then move it build dir.
 - In `tailwind.config.js` add path to where the html content is found.
 
 In Terminal:
+
 - `npm init -y` => Create a package.json file to initialize project metadata, manages dependencies, and automates scripts, streamlining the setup and maintenance of a Node.js project.
 
 In project structure:
-- To compile Tailwind CSS and continously watch for changes and update the 'style.css' file. In `package.json`add to scripts: `"tailwind": "npx tailwindcss -i ./src/input.css -o ./build/css/style.css --watch"`
+
+- To compile Tailwind CSS and continuously watch for changes and update the 'style.css' file. In `package.json`add to scripts: `"tailwind": "npx tailwindcss -i ./src/input.css -o ./build/css/style.css --watch"`
 
 In Terminal:
+
 - `npm i -D prettier-plugin-tailwindcss` => Install a development dependency, this is then seen in the `package.json`file.
   - Using prettier-plugin-tailwindcss ensures consistent and organized ordering of Tailwind CSS classes, improves readability by logically grouping related classes, and enhances development efficiency by automating class sorting, allowing you to focus on writing styles and functionality.
 
 In project structure:
-- new entry,`node_modules` =>  this directory is a key component of a Node.js project, storing all the dependencies needed for the project to run. It ensures that modules are isolated, version-controlled, and readily available for use in your application. Add it to `.gitignore`.
-- Add `"npx prettier --write **/*.html"` to script in `package.json`:  leverages Prettier, a code formatting tool, to format all (&only) HTML files in your project and this also auto formats and organizes the Tailwind classed into a recommended order.
+
+- new entry,`node_modules` => this directory is a key component of a Node.js project, storing all the dependencies needed for the project to run. It ensures that modules are isolated, version-controlled, and readily available for use in your application. Add it to `.gitignore`.
+- Add `"npx prettier --write **/*.html"` to script in `package.json`: leverages Prettier, a code formatting tool, to format all (&only) HTML files in your project and this also auto formats and organizes the Tailwind classed into a recommended order.
 
 In Terminal:
+
 - `npm run tailwind` => This compiles the Tailwind CSS into a usable output file and watches for changes, streamlining the development workflow and ensuring that the styles are always up-to-date and correctly compiled.
 - The warnings will go away as soon as html is linked.
 
 In project structure:
+
 - The `css directory and style.css` is created in 'build'
 - In 'index.html' add link to css and change title. Also add some body classes.
 
-***
+_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
+## Credentials
+
+Tailwind CSS Full Course for Beginners | Complete All-in-One Tutorial | 3 Hours | Dave Gray
+https://www.youtube.com/watch?v=lCxcTsOHrjo&t=185s
+
+All Resources for this Tailwind CSS Course: https://github.com/gitdagray/tailwind...
+
+- 📚 Tutorial References:
+
+  - 🔗 Tailwind CSS: https://tailwindcss.com/
+  - 🔗 Prettier: https://www.npmjs.com/package/prettier
+  - 🔗 Automatic Class Sorting with Prettier: https://tailwindcss.com/blog/automati...
+  - 🔗 git: https://git-scm.com/
+  - 🔗 Github: https://github.com/
+  - 🔗 Render: https://render.com/
+
+- ⚙ Web Dev Tools:
+  - 🔗 Chrome Browser: https://www.google.com/chrome/
+  - 🔗 Node.js: https://nodejs.org/
+  - 🔗 Visual Studio Code (VS Code): https://code.visualstudio.com/
+  - 🔗 Live Server VS Code Extension: https://marketplace.visualstudio.com/...
+  - 🔗 Tailwind CSS Intellisense VS Code Extension: https://marketplace.visualstudio.com/...
+  - 🔗 Inline Fold VS Code Extension: https://marketplace.visualstudio.com/...
+
+_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
+
+### CI start template
+
+<details>
+<summary>CI stuff</summary>
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 Welcome Jacqueline Kalmár,
 
@@ -82,7 +139,7 @@ This is the Code Institute student template for Gitpod. We have preinstalled all
 
 You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
 
-## Gitpod Reminders
+#### Gitpod Reminders
 
 To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
@@ -102,15 +159,15 @@ By Default, Gitpod gives you superuser security privileges. Therefore, you do no
 
 To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
+1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
+2. Scroll down to the _API Key_ and click _Reveal_
 3. Copy the key
 4. In Gitpod, from the terminal, run `heroku_config`
 5. Paste in your API key when asked
 
 You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
 
-### Connecting your Mongo database
+#### Connecting your Mongo database
 
 - **Connect to Mongo CLI on a IDE**
 - navigate to your MongoDB Clusters Sandbox
@@ -123,9 +180,9 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
   - replace all `<angle-bracket>` keys with your own data
 - enter password _(will not echo **\*\*\*\*** on screen)_
 
-------
+---
 
-## Release History
+### Release History
 
 We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
@@ -163,13 +220,13 @@ We continually tweak and adjust this template to help give you the best experien
 
 **April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+**February 2020:** The initialization files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
 **December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
+---
 
-## FAQ about the uptime script
+### FAQ about the uptime script
 
 **Why have you added this script?**
 
@@ -205,3 +262,7 @@ Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` f
 ---
 
 Happy coding!
+
+</details>
+
+_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
